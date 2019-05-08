@@ -12,8 +12,11 @@ Five distinct types of classification models were constructed for purposes of pr
 
 ### Logistic Regression
 *Convenient probability scores*
+
 *Efficient implementations available*
+
 *Wide spread industry comfort for*
+
 *Logistic regression solutions*
 
 Although it is easy to understand and really simple to execute, there are some down sides about it:
