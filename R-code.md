@@ -28,43 +28,64 @@ As a result we are just using this as a baseline model to compare how good do th
 
 ### Naive Bayes
 *Very fast, low storage requirements*
+
 *Robust to irrelevant features*
+
   *irrelevant features cancel each other without affecting results*
+  
 *Very good in domains with many equally important features.*
+
 *Optimal if the independence assumptionshold:*
+
   *If assumed independence of events is correct, then Bayes is the optimal classifier for problem*
   *If not, remember: "All models are wrong but some are useful".*
 
 ### Decision Tree
 *Intuitive Decision Rules*
+
 *Can handle non-linear features*
+
 *Take into account variable interactions*
+
 *Recursive Partitioning is relatively fast, even with large data sets and many attributes*
+
 *Recursive Partitioning does feature selection*
+
 *Small-medium size trees usually intelligible*
+
 *Can be converted to rules*
+
 But we have to be careful about that it is highly biased to training set, as a result, we decided to try Random Forest to check out the performance as well.
 
 ### Random Forest
 Has all the pros from the decision tree, and further solve the problem of highly biased to training set.
 *Independent Classifiers*
+
 *Reduce Variance*
+
 *Handles Overfitting*
 
 ### XGBoost
 Instead of fitting a large decision tree to the data, boosting tries to learn slowly from the errors
 *Extremely fast (parallel computation) and highly efficient.*
+
 *Versatile (Can be used for classification, regression or ranking).*
+
 *Can be used to extract variable importance.*
+
 *Do not require feature transformation (missing values imputation, scaling and normalization)*
+
 However, we still have to tune hyperparameters properly, otherwise it might be overfitted.
 
 ## Data Preparation
 More than 53% of the records in the data set contain either missing or invalid data values. Our data exploration efforts allowed us to uncover relationships between various independent variables that could serve as the basis of statistically valid imputation algorithms for the missing values of the amount_tsh, gps_height, construction_year, latitude and longitude variables.
 
 Eventually we decided to drop columns based 3 reasons:
+
 *Meaningless variable: recorded_by, num_private*
+
 *Duplicate columns: waterpoint_type_group, source, source_class, quantity_group, payment_type, extraction_type, extraction_type_group, scheme_management, water_quality, region_code, management_group, region, district_code*
+
 *High level variables: wpt_name, subvillage, scheme_name, ward*
 
 Impute NAs and 0s by unknown and median
